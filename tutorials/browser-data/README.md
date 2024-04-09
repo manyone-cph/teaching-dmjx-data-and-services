@@ -1,11 +1,21 @@
 # Browser data
 
-Cookie, local storage, indexed db, session storage
+Cookie, local storage, indexed db, session storage 
+Also include stores like nano store, vuex, redux, etc - they can be synced with local storage, indexed db, etc
 
 ## Usecase
 
-JSON is a common format for data exchange. It is human readable and easy to parse. It is also supported by many programming languages.
+
 
 ## Introduction guide
 
-Write and read to file (we use this in pre-build for instance)
+Difference between cookie, local storage, indexed db, session storage, etc
+
+How to use them...
+
+Potential cases we could use as tutorial examples:
+Case: Save a user's settings in local storage
+Case: Save a user's shopping cart in session storage
+Case: Save a user's login in a cookie
+
+## Further reading
