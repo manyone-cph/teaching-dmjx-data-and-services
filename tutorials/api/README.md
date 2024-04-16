@@ -4,8 +4,6 @@
 
 APIs serve as a standardised way to bridge communication between different software systems, facilitating the exchange of data and functionality.
 
-<img src="./assets/api-diagram.png">
-
 ### When to use APIs
 
 - Data retrieval: Fetching data from a database, third-party service, or CMS.
@@ -14,11 +12,11 @@ APIs serve as a standardised way to bridge communication between different softw
 
 ### How API endpoints work
 
-Postman - a popular tool for testing APIs - has a great article about _how API endpoints work_, and _best practise_ for designing and developing API's.
+Postman (a popular tool for testing APIs) has a [great article](https://blog.postman.com/what-is-an-api-endpoint/) about **how API endpoints work**, and **best practise for designing and developing** API's. Please read it to understand the basics of API's.
 
-[Read it here](https://blog.postman.com/what-is-an-api-endpoint/).
+<img src="./assets/api-diagram.png">
 
-## Assignment (and practical guide)
+## Assignments (and practical guide)
 
 ### 1. Use Postman to test APIs
 
@@ -47,4 +45,14 @@ We suggest using [MockAPI.io](https://mockapi.io/) to create a simple API that r
 
 - [Postman: What is an API endpoint?](https://blog.postman.com/what-is-an-api-endpoint/).
 - [MDN Web Docs: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
-- List public apis
+
+### Tools we like to use
+
+- [Postman](https://www.postman.com/): API testing tool.
+- [MockAPI.io](https://mockapi.io/): Create a mock API for testing.
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/): Fake online REST API for testing and prototyping.
+
+### Services we like to use
+
+- [Storyblok](https://www.storyblok.com/): Headless CMS with a visual editor.
+- [Firebase](https://firebase.google.com/): Backend as a Service (authentication, database, storage, hosting, and more).
