@@ -46,8 +46,8 @@ We suggest using [MockAPI.io](https://mockapi.io/) to create a simple API that r
 
 ## Further reading
 
-- [Postman: What is an API endpoint?](https://blog.postman.com/what-is-an-api-endpoint/).
-- [MDN Web Docs: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+- [Postman: What is an API endpoint?](https://blog.postman.com/what-is-an-api-endpoint/)
+- [MDN Web Docs: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 ### Tools we like to use
 
