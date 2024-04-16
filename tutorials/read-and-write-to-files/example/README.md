@@ -1,4 +1,4 @@
-# example-read-and-write
+# Example - read and write JSON files in Node.js
 
 This example demonstrates how to read and write files in Node.js.
 
