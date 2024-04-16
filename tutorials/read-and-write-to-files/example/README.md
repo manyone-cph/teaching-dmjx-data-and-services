@@ -27,7 +27,7 @@ To run these examples follow these steps:
 1. `nvm use` to use the correct Node.js version from the `.nvmrc` file
 2. `npm install` to install the project dependencies
 3. Run the scripts
-  - `npm run json:read` to read JSON file
-  - `npm run json:write` to write JSON file
+    - `npm run json:read` to read JSON file
+    - `npm run json:write` to write JSON file
 
 Try to modify the read and write files to change what's being printed in the console and written to the file.
