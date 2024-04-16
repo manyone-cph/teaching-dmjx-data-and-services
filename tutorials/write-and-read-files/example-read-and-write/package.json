@@ -1,0 +1,12 @@
+{
+  "name": "example-read-and-write",
+  "version": "1.0.0",
+  "description": "Examples of how to read and write to files",
+  "main": "index.js",
+  "scripts": {
+    "json:write": "node src/write.js",
+    "json:read": "node src/read.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

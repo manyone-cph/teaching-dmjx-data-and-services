@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "author": "John Doe",
+    "title": "Post 1",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt ultricies"
+  },
+  {
+    "id": 2,
+    "author": "Jane Doe",
+    "title": "Post 2",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt ultricies"
+  },
+  {
+    "id": 3,
+    "author": "John Doe",
+    "title": "Post 3",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt ultricies"
+  },
+  {
+    "id": 4,
+    "author": "Jane Doe",
+    "title": "Post 4",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt ultricies"
+  },
+  {
+    "id": 5,
+    "author": "John Doe",
+    "title": "Post 5",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt ultricies"
+  }
+]

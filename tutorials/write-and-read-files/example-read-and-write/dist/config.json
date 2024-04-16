@@ -1,0 +1,5 @@
+{
+  "debugMode": true,
+  "logLevel": "verbose",
+  "port": 8080
+}

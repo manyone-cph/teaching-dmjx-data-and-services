@@ -1,0 +1,80 @@
+{
+  "title": "Company Name",
+  "logo": "/images/logo.png",
+  "mainMenu": [
+    {
+      "name": "Home",
+      "link": "/"
+    },
+    {
+      "name": "Cases",
+      "link": "/cases",
+      "submenu": [
+        {
+          "name": "Case 1",
+          "link": "/cases/case-1"
+        },
+        {
+          "name": "Case 2",
+          "link": "/cases/case-2"
+        },
+        {
+          "name": "Case 3",
+          "link": "/cases/case-3"
+        }
+      ]
+    },
+    {
+      "name": "About Us",
+      "link": "/about",
+      "submenu": [
+        {
+          "name": "Our Story",
+          "link": "/about/our-story"
+        },
+        {
+          "name": "Our Team",
+          "link": "/about/our-team"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "link": "/contact"
+    }
+  ],
+  "footer": {
+    "text": "Copyright © {{year}} Company Name. All rights reserved.",
+    "links": [
+      {
+        "name": "Privacy Policy",
+        "link": "/privacy-policy"
+      },
+      {
+        "name": "Terms of Use",
+        "link": "/terms-of-use"
+      },
+      {
+        "name": "Sitemap",
+        "link": "/sitemap"
+      }
+    ],
+    "socialMedia": [
+      {
+        "platform": "Facebook",
+        "iconPath": "/icons/facebook.png",
+        "link": "https://www.facebook.com/YourCompany"
+      },
+      {
+        "platform": "Twitter",
+        "iconPath": "/icons/twitter.png",
+        "link": "https://twitter.com/YourCompany"
+      },
+      {
+        "platform": "Instagram",
+        "iconPath": "/icons/instagram.png",
+        "link": "https://www.instagram.com/YourCompany"
+      }
+    ]
+  }
+}
