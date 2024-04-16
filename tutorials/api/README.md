@@ -29,7 +29,7 @@ Postman is a popular tool for testing APIs. You can use it to send requests to a
 3. Verify that the API returns the expected response.
 4. Replace the URL with another API endpoint and send a request to it - here's a list of [Public APIs](https://apipheny.io/free-api/) to test with.
 
-### 2. Create your own API and todo list app
+### 2. Create your own API and todo list vue app
 
 We suggest using [MockAPI.io](https://mockapi.io/) to create a simple API that returns a list of todo's. Mock API's are useful to create fake APIs when building websites and the real API is not ready yet.
 
