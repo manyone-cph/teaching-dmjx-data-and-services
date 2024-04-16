@@ -30,8 +30,6 @@ Example of a JSON Object:
 
 At Manyeone, we often use JSON to store data in files in the project, for example configuration files or static data such as content for the main navigation, tags, etc. that we want to fetch in the build process to optimise page load speed.
 
-## Practical guide
-
 ### Writing to a JSON File
 
 This can be essential in a build process where pre-configured settings are needed. Below is a Node.js script example that writes a JSON object to a file.
@@ -66,17 +64,24 @@ fs.readFile('config.json', 'utf8', (err, data) => {
 });
 ```
 
+## Assignments
+
+### 1. Convert JSON to CSV and vice versa
+
+Create a Node.js script that reads a JSON file and converts it to a CSV file. Then, create another script that reads the CSV file and converts it back to a JSON file.
+
+- Use the `fs` module to read and write files.
+- Use packages like [`json-2-csv`](https://www.npmjs.com/package/json-2-csv) to help with the conversion.
+
+### 2. Fetch data from an API and write it to a JSON file
+
+Create a Node.js script that fetches data from an API of your choice and writes it to a JSON file.
+
+- Use the `fetch` module to make HTTP requests.
+- Use the `fs` module to read and write files.
+
 ## Further reading
 
 - [MDN Web Docs on JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 - [W3Schools JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
 - [Node.js File System Module Guide](https://areknawo.com/node-js-file-system-api-beginner-friendly-guide/)
-
-## Assignments
-
-1. Create a node.js script that converts JSON to CSV and vice versa.
-    - Use the `fs` module to read and write files.
-    - You can use packages like [`json-2-csv`](https://www.npmjs.com/package/json-2-csv) to help with the conversion.
-2. Create a node.js script to fetch data from an API and save it to a JSON file.
-    - Use the `fetch` module to make HTTP requests.
-    - Save the data to a JSON file using the `fs` module.

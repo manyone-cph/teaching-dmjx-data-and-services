@@ -1,6 +1,8 @@
 # Guide: API
 
-## Usecase
+This guide will introduce you to APIs, how they work, and how to use them in your projects.
+
+## Introduction
 
 APIs serve as a standardised way to bridge communication between different software systems, facilitating the exchange of data and functionality.
 
@@ -16,7 +18,7 @@ Postman (a popular tool for testing APIs) has a [great article](https://blog.pos
 
 <img src="./assets/api-diagram.png">
 
-## Assignments (and practical guide)
+## Assignments
 
 ### 1. Use Postman to test APIs
 
