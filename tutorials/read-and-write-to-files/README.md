@@ -77,6 +77,7 @@ Create a Node.js script that reads a JSON file and converts it to a CSV file. Th
 
 Create a Node.js script that fetches data from an API of your choice and writes it to a JSON file.
 
+- Read the [API Guide](/tutorials/api/) to understand how to fetch data from an API.
 - Use the `fetch` module to make HTTP requests.
 - Use the `fs` module to read and write files.
 
