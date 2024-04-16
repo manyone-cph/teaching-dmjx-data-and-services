@@ -33,11 +33,12 @@ Postman is a popular tool for testing APIs. You can use it to send requests to a
 
 We suggest using [MockAPI.io](https://mockapi.io/) to create a simple API that returns a list of todo's. Mock API's are useful to create fake APIs when building websites and the real API is not ready yet.
 
-1. Follow [MockAPI's quick start guide](https://github.com/mockapi-io/docs/wiki/Quick-start-guide) to create your API and define a new endpoint that returns a list of todo's.
-2. Use Postman to test the API.
+1. Based on your knowledge about API best practise from the Postman article, think about how you would structure your API endpoints for a todo list app.
+2. Follow [MockAPI's quick start guide](https://github.com/mockapi-io/docs/wiki/Quick-start-guide) to create your API and define endpoints to return a list of todo's.
+3. Use Postman to test your API endpoints.
     - Use Postman to send a GET request to the endpoint you created and verify the response.
     - Then to send a POST request and verify the response.
-3. Set up a new Vite + Vue project to render the todo's on a page
+4. Set up a new Vite + Vue project so you can render the todo's on a page
     - `npm create vite@latest` to create a new Vite project with Vue.
     - Use the [fetch api](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to GET the todo's from the MockAPI endpoint.
     - Render the todo's on a page.
