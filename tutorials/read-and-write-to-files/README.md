@@ -28,7 +28,7 @@ Example of a JSON Object:
 - Static data storage (e.g. content for a website)
 - Data interchange between clients and servers (e.g. REST APIs)
 
-At Manyeone, we often use JSON to store data in files in the project, for example configuration files or static data such as content for the main navigation, tags, etc. that we want to fetch in the build process to optimise page load speed.
+At Manyone, we often use JSON to store data in files in the project, for example configuration files or static data such as content for the main navigation, tags, etc. that we want to fetch in the build process to optimise page load speed.
 
 ### Writing to a JSON File
 
