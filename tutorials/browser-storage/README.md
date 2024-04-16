@@ -1,4 +1,4 @@
-# Browser data
+# Browser storage
 
 Web apps can store data directly in a user's browser using several different methods, each with its own use cases and benefits. Here, we’ll explore three key types of browser storage: local storage, session storage, and cookies. These mechanisms are essential for handling data persistence, session management, and state control in web apps.
 
