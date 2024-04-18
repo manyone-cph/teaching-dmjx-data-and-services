@@ -66,6 +66,8 @@ fs.readFile('config.json', 'utf8', (err, data) => {
 
 ## Assignments
 
+In the [/examples](./examples) folder, you'll find an example project with reading and writing to JSON. You can use that as a starting point for the assignments below.
+
 ### 1. Convert JSON to CSV and vice versa
 
 Create a Node.js script that reads a JSON file and converts it to a CSV file. Then, create another script that reads the CSV file and converts it back to a JSON file.
@@ -80,6 +82,7 @@ Create a Node.js script that fetches data from an API of your choice and writes 
 - Read the [API Guide](/tutorials/api/) to understand how to fetch data from an API.
 - Use the `fetch` module to make HTTP requests.
 - Use the `fs` module to read and write files.
+- Try to filter the data before saving to ensure only relevant information is stored, optimizing file size and clarity.
 
 ## Further reading
 

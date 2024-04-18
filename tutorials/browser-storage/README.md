@@ -83,6 +83,8 @@ Session storage is perfect for temporary data like a shopping cart because it cl
 
 ### 3. Simple authentication with cookies
 
+/*Or you can implement a cookie consent banner logic*/
+
 Cookies are used for managing sessions and maintaining user state across multiple pages. A simple use case could be to check if a user is logged in as they navigate through different parts of a website.
 
 1. Set up a Vite + Vue app with `npm create vite@latest` (or use an existing project).
@@ -93,7 +95,7 @@ Cookies are used for managing sessions and maintaining user state across multipl
 
 **Security Note:** Using cookies as shown is simplified and not suitable for production environments. For robust and secure authentication, consider using managed services like Firebase Auth, Auth0, or Auth.js.
 
-### 4. Use VueUse to interact with browser storage
+### 4. Use VueUse to interact with browser storage (shortcut)
 
 https://vueuse.org/core/useStorage/
 
