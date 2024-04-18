@@ -1,30 +1,29 @@
 # Dynamic Page Rendering
 
-Dynamic page rendering is a technique used to generate layouts dynamically on the server or client, using data to craft personalized, interactive web experiences without hardcoding content.
+Dynamic page rendering is a technique used to generate layouts dynamically based on data from content management systems (CMS) databases. This approach enables us to craft personalized, interactive web experiences without hardcoding content.
 
-## Data structure
+## Structuring your content
 
-Guidelines for how to structure components and data in a dynamic page rendering project.
+To effectively use dynamic page rendering, you must organize your project with clear component and data structures:
 
-Atomic design principles can be applied to the structure of the project:
+- **Pages**: Design each view in your application as a separate page.
+- **Components**: Break down pages into reusable components. Familiarize yourself with [Atomic Design principles](https://atomicdesign.bradfrost.com/chapter-2/) to optimize component architecture.
+- **Data model**: Define content templates and component types and make a data model for each type to ensure consistency across your project.
+- **Data storage**: Store your data in JSON format to be imported and looped through to render dynamic content on the page.
 
-- **Pages**: Create a page for each view in the application.
-- **Components**: Break down the page into reusable components that can be used to render different parts of the page.
-- **Data**: Store data in JSON files that can be imported and looped through to render content on the page.
+## Efficient JSON structure
 
-### How to structure my JSON
+When crafting a JSON file for dynamic page rendering, consider the following to ensure efficient processing and rendering:
 
-When creating a JSON file for dynamic page rendering, consider the following:
-
-- **Data structure**: How should the data be structured to make it easy to loop through and render on the page?
-- **Content types**: What types of content will be displayed on the page? (e.g. text, images, links, etc.)
-- **Nested data**: How should nested data be structured to maintain relationships between different pieces of content?
-- **Metadata**: What additional information should be included in the JSON file to help with rendering or styling the content?
-- **Data consistency**: How can we ensure that the data is consistent across different pages or components?
-- 
-
+- **Data Structure**: How can you structure your data to facilitate easy looping and conditional rendering?
+- **Content Types**: What types of content (e.g., text, images, links) will your pages display? And what is the data schema for each content type?
+- **Nested Data**: How can you nest data to maintain the relationships and hierarchy among your content?
+- **Metadata**: What metadata should you include to assist in the rendering and styling of content?
+- **Data Consistency**: How will you ensure data consistency across different components and pages, such as maintaining uniform data fields for buttons?
 
 ## Assignments
+
+In this guide the content live in JSON files within the project, but in a real world scenario you would fetch the data via APIs from a [headless CMS](https://www.sanity.io/headless-cms) or database.
 
 ### 1. Create a dynamic page rendering
 
@@ -45,9 +44,9 @@ When creating a JSON file for dynamic page rendering, consider the following:
 3. Loop through the JSON data and render it on the page.
 
 
+## Further reading
 
-TODO: Add example project where we use dynamic page rendering to create a blog with a list of posts and a detail page for each post.
+- [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/): Principles for designing scalable and maintainable web interfaces.
+- [Headless CMS](https://www.sanity.io/headless-cms): A content management system that provides a clean separation between content and presentation, enabling dynamic page rendering.
+- [Data modelling](https://www.thedataschool.com.au/john-lyu/data-modeling-101-a-beginners-guide-to-success/): A beginner's guide to data modelling for effective data structuring. This is very backend focused, but it's good to understand how data is structured in databases.
 
-To begin with it should just be rendering the JSON data
-
-And we should add a screenshot of the expected output after all data is looped through and rendered on the page.
