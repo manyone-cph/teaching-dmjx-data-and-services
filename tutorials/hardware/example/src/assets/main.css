@@ -1,0 +1,68 @@
+@font-face {
+  font-family: flappy-bird;
+  src: url('/fonts/flappy-font.ttf');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+button {
+  all: unset;
+}
+
+body {
+  /* font-family: "Press Start 2P", system-ui; */
+  font-family: "flappy-bird", system-ui;
+
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  user-select: none;
+  touch-action: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+
+}
+
+.container {
+  position: absolute;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  user-select: none;
+  touch-action: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
