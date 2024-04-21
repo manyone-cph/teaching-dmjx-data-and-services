@@ -25,7 +25,7 @@ Besides listening to existing events available in the DOM, we can also use liste
 
 Set up a simple web project using for instance [Codepen](https://codepen.io), or create a project locally. 
 
-We need a container and an element to move (local example):
+We need a container and an element to move:
 ```html
 ...
 <div id="container">
@@ -35,7 +35,7 @@ We need a container and an element to move (local example):
 ```
 container is positioned relative, filling the entire window, and the box is absolute positioned. Give the box a size and a background color so it is visible.
 
-Crate a javascript file, and reference it in the html document
+Crate a javascript file, and reference it in the html document (not needed if you're in Codepen)
 ```html
 <script src="script.js"></script>
 ````
@@ -43,9 +43,10 @@ Crate a javascript file, and reference it in the html document
 In the file ```script.js``` well add an event listener and move the box ```10px``` each time the listener is invoked:
 
 ```js
+var box = document.getElementById('box');
+
 document.addEventListener('keydown', function(event) {
     if (event.code === 'Space') {
-        var box = document.getElementById('box');
         box.style.left = (parseInt(box.style.left) + 10) + 'px';
     }
 });
@@ -58,6 +59,50 @@ When you run your code, you should see the box move from left to right across th
 
 To get smooth motion, we're going to set a state on the keyboard event, and then move the box in an animation frame instead. Since we also want to detect when the key is released we'll add an event lister for ```keyup``` too.
 
+```js
+var box = document.getElementById("box");
+var isMoving = false;
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        isMoving = true;
+    }
+});
+
+document.addEventListener('keyup', function(event) {
+    if (event.code === 'Space') {
+        isMoving = false;
+    }
+});
+```
+- Added ```isMoving```variable
+- Moved ```box``` variable out of event listener so it is available globally
+- Added ```keyup``` listener
+- Setting ```isMoving``` to ```true``` if the space key is pressed down
+- Setting ```isMoving``` to ```false``` if the space key is released
+
+Now we're no longer moving the box in the event listener, which was causing jerky movement, but simply setting a variable to determine if it should or should not be moving. 
+
+To move the box we'll add an update loop using ```requestAnimationFrame```
+```js
+function update() {
+  if (isMoving) {
+    box.style.left = parseInt(box.style.left) + 5 + "px"; //move the box
+  }
+  requestAnimationFrame(update); // Keep the loop running
+}
+
+update() // start the update loop
+```
+- Move the box if ```isMoving```is true. 
+- Reduced the distance to 5px, since the update loops runs at 60fps
+- This is a simplified loop. Normally you'd want to ensure that the update runs consistently independent of framerate, by using a timestamp to determine the actual framerate, [see more here](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).
+
+When you run the code the box should move smoothly from left to right as long as you keep space pressed, and stop when you relase it.
+
+**Further improvements** 
+- Add accelleration and decelleration. So when first pressing the key, the box starts moving slowly and picks up speed over time, reaching some maximum value after a short while. And when the key is released the speed decreeses over time, maing the box slow down and come to a smooth stop.
+- Try listening for the arrow keys (ArrowDown, ArrowUp, ArrowLeft, ArrowRight) and move the box in the correct direction depedning on what keys are pressed.
 
 ### 2. Use the mouse to move an element
 
