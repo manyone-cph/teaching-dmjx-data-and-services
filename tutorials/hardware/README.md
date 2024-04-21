@@ -167,6 +167,7 @@ If you need hardware output or more complex inputs, the Arduino is great, and th
 Using camera and microphione as input is beyond this guide, but if you want to get started P5 has some basic examples. Check out the [P5.js microphone input](https://p5js.org/examples/sound-mic-input.html) example and the [P5.js web camera input](https://p5js.org/examples/dom-video-capture.html) example.
 
 ## Further reading & resources
+- [Flappy bird learning project](./example)
 - [JavaScript Event Listeners Ultimate Guide](https://blog.webdevsimplified.com/2022-01/event-listeners/) on the Web Dev Simplified Blog.
 - [Physcial computing tutorial](https://makeabilitylab.github.io/physcomp/) on Makeability Lab.
 - [Arduino](https://www.arduino.cc/) for physical computing with hardware inpout and output.

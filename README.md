@@ -39,6 +39,8 @@ How to interact with hardware inputs like mouse, keyboard, serialport, etc.
 
 #### Assignments
 
-1. Flappy bird with keyboard input and sound effects
+1. Use the keyboard to move an element
+2. Use the mouse to move an element
+3. Create a simple game using keyboard or mouse as input
 
 ### [Dynamic page rendering](./tutorials/dynamic-page-rendering)
