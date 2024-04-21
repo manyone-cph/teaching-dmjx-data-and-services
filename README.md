@@ -44,3 +44,8 @@ How to interact with hardware inputs like mouse, keyboard, serialport, etc.
 3. Create a simple game using keyboard or mouse as input
 
 ### [Dynamic page rendering](./tutorials/dynamic-page-rendering)
+
+#### Assignments
+
+1. Create a dynamic page rendering
+2. Create your own dynamic page rendering
