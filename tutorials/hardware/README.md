@@ -1,14 +1,20 @@
-# Hardware (keyboard, mouse)
+# Guide Hardware (keyboard, mouse)
 
-## Usecase
+This guide will introduce you to using keyboard and mouse input, beyond simply using it for links and buttons and form input. 
+
+## Introduction
+
+### Usages
 
 
 
-## Introduction guide
-
-Read hardware input (mus, keyboard, kamera, højtaler)
+## Assignments
+Read hardware input (mouse, keyboard)
 
 Keyboard - game
+
+## Beyond keyboard and muse
+- camera, microphone, arduino?
 
 ## Further reading
 

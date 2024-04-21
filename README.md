@@ -33,7 +33,7 @@ How to use browser data storage like cookies, local storage, indexed db, and ses
 3. Simple authentication with cookies
 4. Use VueUse to interact with browser storage (shortcut)
 
-### [Hardware](./tutorial/hardware)
+### [Hardware](./tutorials/hardware)
 
 How to interact with hardware inputs like mouse, keyboard, serialport, etc.
 
