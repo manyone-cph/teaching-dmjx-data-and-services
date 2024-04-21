@@ -11,11 +11,11 @@ Keyboard and mouse are the most common ways to interact with a website (and a co
 There are many different types of DOM events, and we'll be looking at some related to the keyboard and mouse. You can add event listeners using  [addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener), and remove them again using  [removeEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener).
 
 The following events related to the keyboard and mouse are used in this tutorial
-- [keydown](https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event)
+- [keydown](https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event).
 Fired for all keys when pressed down. 
-- [keyup](https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event)
+- [keyup](https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event).
 Fired for all keys when a key is released. 
-- [mousemove](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event)
+- [mousemove](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event). Fired when the mouse moves
 
 Besides listening to existing events available in the DOM, we can also use listeners for custom events, and sends events using [dispatchEvent](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent)
 
@@ -25,7 +25,7 @@ Besides listening to existing events available in the DOM, we can also use liste
 
 Set up a simple web project using for instance [Codepen](https://codepen.io), or create a project locally. 
 
-We need a container and an element to move:
+Add a container and an element to the page:
 ```html
 ...
 <div id="container">
@@ -33,14 +33,14 @@ We need a container and an element to move:
 </div>
 ...
 ```
-container is positioned relative, filling the entire window, and the box is absolute positioned. Give the box a size and a background color so it is visible.
+The container element should be positioned relative, filling the entire window, and the box positioned absolute. Give the box a size and a background color so it is visible.
 
 Crate a javascript file, and reference it in the html document (not needed if you're in Codepen)
 ```html
 <script src="script.js"></script>
 ````
 
-In the file ```script.js``` well add an event listener and move the box ```10px``` each time the listener is invoked:
+In the javascript file we'll add an event listener and move the box ```10px``` each time the listener is invoked:
 
 ```js
 var box = document.getElementById('box');
@@ -52,10 +52,10 @@ document.addEventListener('keydown', function(event) {
 });
 ```
 
-- ```keydown``` event listener is added to the ```document```. Event listeners can be added to any element, and will be listening for events on the specified element. Using window or ducument ensures the events are captured globally. 
+- A ```keydown``` event listener is added to the ```document```. Event listeners can be added to any element, and will listen for events on the specified element. Using window or ducument ensures the events are captured globally. 
 - ```event.code```is used to identify which key was pressed, and only move the box in case it is the Space key. See [here for a list of code values](https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_code_values), and also check out the [key property](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key), which returns the value of the key pressed.
 
-When you run your code, you should see the box move from left to right across the page as you press 'Space'. The movement is quite jerky when holding Space, and there's an extended delay after the first move. This is due to the way operating systems hande key repeats and can vary depending on the operating system and user settings.
+When you run the code, you should see the box move from left to right across the page as you press 'Space'. The movement is quite jerky when holding Space, and there's an extended delay after the first move. This is due to the way operating systems hande key repeats and can vary depending on the operating system and user settings.
 
 To get smooth motion, we're going to set a state on the keyboard event, and then move the box in an animation frame instead. Since we also want to detect when the key is released we'll add an event lister for ```keyup``` too.
 
@@ -101,7 +101,7 @@ update() // start the update loop
 When you run the code the box should move smoothly from left to right as long as you keep space pressed, and stop when you relase it.
 
 **Further improvements** 
-- Add accelleration and decelleration. So when first pressing the key, the box starts moving slowly and picks up speed over time, reaching some maximum value after a short while. And when the key is released the speed decreeses over time, maing the box slow down and come to a smooth stop.
+- Add accelleration and decelleration. So when first pressing the key, the box starts moving slowly and picks up speed over time, reaching some maximum value after a short while. And when the key is released the speed decreeses over time, making the box slow down and come to a smooth stop.
 - Try listening for the arrow keys (ArrowDown, ArrowUp, ArrowLeft, ArrowRight) and move the box in the correct direction depedning on what keys are pressed.
 
 ### 2. Use the mouse to move an element
@@ -126,11 +126,11 @@ Running your code now should have a circle following the mouse.
 ### 3. Create a simple game using keyboard or mouse as input
 Take a look at the [Flappy Bird learning project](./example) for help with game logic and state management. You can use the example project as a starting point for your own game, or as reference. 
 
-Find an existing game you can clone, or come up with your own idea for a game using either the keyboard or mouse as input. Keep it simple, and focus on the game logic and inputs and outputs.
+Find an existing game you can clone, or come up with your own idea for a game using either the keyboard or mouse as input. Keep it simple, and focus on the game logic and inputs and outputs. If you pick an existing game, consider changing its context by using different graphics.
 
-Here are a few examples of some simple games that you can recreate:
+Here are a few examples of simple games that you can recreate:
 
-- **[Dinosaur game](https://en.wikipedia.org/wiki/Dinosaur_Game)**
+- **[Dinosaur game](https://en.wikipedia.org/wiki/Dinosaur_Game)**, the Google endless runner where you control a T-rex running in a desert.
   - Jump action, similar to the Flappy bird example. 
   - Obstacles similar to the Flappy bird example, but more randomly distributed.
   - Simple rectangle intersection can be used for the collision detection, like in the Flappy bird example. 
@@ -142,14 +142,15 @@ Here are a few examples of some simple games that you can recreate:
   - For the ball to move continously, update it's position in an update loop each frame. Give it an intial random velocity (x, y) when the game starts.
   - When the ball collides with a paddle reverse the x direction of its movement.
   - When the ball collides with the top/bottom of the screen reverse the y direction.
-  - When reversing a direction, you can adjust it slightly to create some variation of the bounce. 
+  - When reversing a direction, you can adjust it slightly to create some variation of the bounce.
+  - Score and game states, similar to the Flappy bird example. 
 
 - **Asteroids**. Space shooter game where you need to destroy asteroids before they crash into your ship.
   - More complex, as now we need to rotate an element, and then move it in the direction it's pointing. 
-  - Physics with accelleration and inertia can be faked but is still not simple.
   - Use two keys to update the rotation angle. 
   - Apply the angle to the rotation transform of the element.
   - Getting direction vector (x,y) for movement can be done using [sine and cosine](https://gamedev.stackexchange.com/a/172640)
+  - Physics with accelleration and inertia can be faked but is still not simple.
   - Wrapping asteroids around the screen by moving them to the opposite side if they are outside the screen.
   - Simple rectangle intersection can be used for the collision detection, like in the Flappy bird example.
   - Shooting. Maybe the obstacle logic fomr Flappy bird can be used as inspiration? 
@@ -157,7 +158,7 @@ Here are a few examples of some simple games that you can recreate:
 ## Beyond standard keyboard and mouse
 
 ### Hardware hacking
-For physical computing projects where you need input from a custom built physical interface, using keyboard input can be a great way to keep it simple and reliable. You can either repurpose an existing keyboard for your needs, or use a keyboard controller like the [Ultimarc I-PAC2](https://www.ultimarc.com/control-interfaces/i-pacs/i-pac2/). As long as you just need on/off there's no need need to go through a microcontroller like the Ardunio. By mapping to standard keyboard, you can also easily use and test the software without special hardware.
+For physical computing projects where you need input from a custom built physical interface, using keyboard input can be a great way to keep it simple and reliable. You can either repurpose an existing keyboard for your needs, or use a keyboard controller like the [Ultimarc I-PAC2](https://www.ultimarc.com/control-interfaces/i-pacs/i-pac2/). As long as you just need on/off there's no need to go through a microcontroller like the Ardunio. By mapping to standard keyboard, you can also easily use and test the software without special hardware.
 
 ### Arduino
 If you need hardware output or more complex inputs, the Arduino is great, and there are lots of examples online. To connect a website project to an Ardunio you can use the [Simple Web Serial](https://github.com/fmgrafikdesign/SimpleWebSerialJS) library, which makes it easy to get started.
