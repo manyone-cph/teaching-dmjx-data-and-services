@@ -45,6 +45,8 @@ How to interact with hardware inputs like mouse, keyboard, serialport, etc.
 
 ### [Dynamic page rendering](./tutorials/dynamic-page-rendering)
 
+How to use content and structure from a headless CMS to dynamically render pages on a site.
+
 #### Assignments
 
 1. Create a dynamic page rendering
