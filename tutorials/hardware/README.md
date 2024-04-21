@@ -4,7 +4,7 @@ This guide will introduce you to using keyboard and mouse input, beyond simply u
 
 ## Introduction
 
-Keyboard and mouse are the most common ways to interact with a website (and a computer in general for that matter), and for standard usage there is very little one need to think about to use them. The keyboard works as expected in form fields, and clicking links (anchor tags and buttons) works automatically, but it is also possible to listen for events from keyboard and mouse and handle them manually.
+Keyboard and mouse are the most common ways to interact with a website (and a computer in general for that matter), and for basic usage it works without having to do much. The keyboard works as expected in form fields, and clicking links (anchor tags and buttons) works automatically. But, it is also possible to listen for events from keyboard and mouse and handle them manually.
 
 ### Listening for keyboard & mouse events
 
