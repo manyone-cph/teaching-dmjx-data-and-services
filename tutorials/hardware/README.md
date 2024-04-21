@@ -1,10 +1,10 @@
-# Guide Hardware (keyboard, mouse)
+# Guide: Hardware (keyboard, mouse)
 
 This guide will introduce you to using keyboard and mouse input, beyond simply using it for links and buttons and form input. 
 
 ## Introduction
 
-Keyboard and mouse are the most common ways to interact with a website (and a computer in general for that matter), and for standard usage there is very little one need to think about to use them. The keyboard works as expected in form fields, and clicking links (anchor tags and buttons) works automatically. 
+Keyboard and mouse are the most common ways to interact with a website (and a computer in general for that matter), and for standard usage there is very little one need to think about to use them. The keyboard works as expected in form fields, and clicking links (anchor tags and buttons) works automatically, but it is also possible to listen for events from keyboard and mouse and handle them manually.
 
 ### Listening for keyboard & mouse events
 
@@ -17,7 +17,7 @@ Fired for all keys when pressed down.
 Fired for all keys when a key is released. 
 - [mousemove](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event)
 
-Besides listening to existing events available in the DOM, we can also use listeners for custom events, which can be sent using [dispatchEvent](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent)
+Besides listening to existing events available in the DOM, we can also use listeners for custom events, and sends events using [dispatchEvent](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent)
 
 ## Assignments
 
@@ -105,21 +105,70 @@ When you run the code the box should move smoothly from left to right as long as
 - Try listening for the arrow keys (ArrowDown, ArrowUp, ArrowLeft, ArrowRight) and move the box in the correct direction depedning on what keys are pressed.
 
 ### 2. Use the mouse to move an element
+In the keyboard project, let's add another element and move it with the mouse:
+
+```html
+<div id="container">
+    <div id="box" style="left: 0px; top: 50%;"></div>
+    <div id="circle" style="left: 0px; top: 0px;"></div>
+</div>
+```
+
+Use a different color for this element, and add a border radius to turn it into a circle. 
+
+Add another event listener, this time listening for the event ```mousemove```. The event object passed to this event is different than the one we get with keyboard events. It's a [MouseEvent](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) and we can use the properties clientX and clientY on that event to get the position of the mouse in the window, and apply that to the circle.
+
+Running your code now should have a circle following the mouse. 
+
+**Further improvements** 
+- Can you make the circle follow the mouse with a slight delay? Since the ```mousemove``` event is only called when moving the mouse, we need to move the positioning of the circle to the animation frame, just like we did with the keyboard. Store the mouse position from the event in a variable, and move the circle towards that position in the update loop. 
 
 ### 3. Create a simple game using keyboard or mouse as input
-Take a look at the [Flappy Bird learing project](./example) for help with game logic and state management. You can use the example project as a starting point for your own game, or as reference. 
+Take a look at the [Flappy Bird learning project](./example) for help with game logic and state management. You can use the example project as a starting point for your own game, or as reference. 
 
-Find an existing game you can clone, or come up with your own idea for a game using either the keyboard or mouse as input. 
+Find an existing game you can clone, or come up with your own idea for a game using either the keyboard or mouse as input. Keep it simple, and focus on the game logic and inputs and outputs.
 
-Here are a few examples of games that could be cloned:
+Here are a few examples of some simple games that you can recreate:
 
-- **Pong**
+- **[Dinosaur game](https://en.wikipedia.org/wiki/Dinosaur_Game)**
+  - Jump action, similar to the Flappy bird example. 
+  - Obstacles similar to the Flappy bird example, but more randomly distributed.
+  - Simple rectangle intersection can be used for the collision detection, like in the Flappy bird example. 
+  - Score and game states, similar to the Flappy bird example.
 
-## Beyond keyboard and muse
-- camera, microphone, arduino?
+- **Pong**. Simple table tennis game where two players control paddles to hit a ball back and forth.
+  - Use keyboard input to move the paddles using the technique from the first assignement. Two player game
+  - Simple rectangle intersection can be used for the collision detection, like in the Flappy bird example. 
+  - For the ball to move continously, update it's position in an update loop each frame. Give it an intial random velocity (x, y) when the game starts.
+  - When the ball collides with a paddle reverse the x direction of its movement.
+  - When the ball collides with the top/bottom of the screen reverse the y direction.
+  - When reversing a direction, you can adjust it slightly to create some variation of the bounce. 
 
-## Further reading
+- **Asteroids**. Space shooter game where you need to destroy asteroids before they crash into your ship.
+  - More complex, as now we need to rotate an element, and then move it in the direction it's pointing. 
+  - Physics with accelleration and inertia can be faked but is still not simple.
+  - Use two keys to update the rotation angle. 
+  - Apply the angle to the rotation transform of the element.
+  - Getting direction vector (x,y) for movement can be done using [sine and cosine](https://gamedev.stackexchange.com/a/172640)
+  - Wrapping asteroids around the screen by moving them to the opposite side if they are outside the screen.
+  - Simple rectangle intersection can be used for the collision detection, like in the Flappy bird example.
+  - Shooting. Maybe the obstacle logic fomr Flappy bird can be used as inspiration? 
 
+## Beyond standard keyboard and mouse
+
+### Hardware hacking
+For physical computing projects where you need input from a custom built physical interface, using keyboard input can be a great way to keep it simple and reliable. You can either repurpose an existing keyboard for your needs, or use a keyboard controller like the [Ultimarc I-PAC2](https://www.ultimarc.com/control-interfaces/i-pacs/i-pac2/). As long as you just need on/off there's no need need to go through a microcontroller like the Ardunio. By mapping to standard keyboard, you can also easily use and test the software without special hardware.
+
+### Arduino
+If you need hardware output or more complex inputs, the Arduino is great, and there are lots of examples online. To connect a website project to an Ardunio you can use the [Simple Web Serial](https://github.com/fmgrafikdesign/SimpleWebSerialJS) library, which makes it easy to get started.
+
+### Camera and microphone input
+Using camera and microphione as input is beyond this guide, but if you want to get started P5 has some basic examples. Check out the [P5.js microphone input](https://p5js.org/examples/sound-mic-input.html) example and the [P5.js web camera input](https://p5js.org/examples/dom-video-capture.html) example.
+
+## Further reading & resources
 - [JavaScript Event Listeners Ultimate Guide](https://blog.webdevsimplified.com/2022-01/event-listeners/) on the Web Dev Simplified Blog.
-- Serial Port Communication (USB, Bluetooth, etc.)
-  - [Arduino](https://www.arduino.cc/)
+- [Physcial computing tutorial](https://makeabilitylab.github.io/physcomp/) on Makeability Lab.
+- [Arduino](https://www.arduino.cc/) for physical computing with hardware inpout and output.
+  - [Simple Web Serial - Arduino part](https://github.com/fmgrafikdesign/simplewebserial-arduino-library)
+  - [Simple Web Serial - Javascript part](https://github.com/fmgrafikdesign/SimpleWebSerialJS)
+- [Ultimarc](https://www.ultimarc.com) Arcade controls if you need to build something
