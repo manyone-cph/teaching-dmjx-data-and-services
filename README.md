@@ -22,9 +22,9 @@ How to read and write files in Node.js.
 1. Convert JSON to CSV and vice versa
 2. Fetch data from an API and write it to a JSON file
 
-### [Browser data](./tutorials/browser-data)
+### [Browser storage](./tutorials/browser-storage)
 
-How to use browser data storage like cookies, local storage, indexed db, and session storage.
+How to use browser storage like cookies, local storage, indexed db, and session storage.
 
 #### Assignments
 
