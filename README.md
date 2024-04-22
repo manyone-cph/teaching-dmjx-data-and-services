@@ -1,6 +1,6 @@
 # teaching-dmjx-data-and-services
 
-This repository contains teaching material for the course Data and Services at DMJX.
+This repository contains introduction and assignemtns for the course Data and Services at DMJX. All assigments are based on the tools we like to use in our daily work.
 
 ## Tutorials and assignments
 
