@@ -43,11 +43,11 @@ How to interact with hardware inputs like mouse, keyboard, serialport, etc.
 2. Use the mouse to move an element
 3. Create a simple game using keyboard or mouse as input
 
-### [Dynamic page rendering](./tutorials/dynamic-page-rendering)
+### [Dynamic content](./tutorials/dynamic-content)
 
-How to use content and structure from a headless CMS to dynamically render pages on a site.
+How to use content and structure from a headless CMS to dynamically render content on a site.
 
 #### Assignments
 
-1. Create a dynamic page rendering
-2. Create your own dynamic page rendering
+1. Create dynamic content in JSON
+2. Create dynamic content with a headless CMS

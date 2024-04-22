@@ -83,9 +83,7 @@ Session storage is perfect for temporary data like a shopping cart because it cl
 
 ### 3. Simple authentication with cookies
 
-/*Or you can implement a cookie consent banner logic*/
-
-Cookies are used for managing sessions and maintaining user state across multiple pages. A simple use case could be to check if a user is logged in as they navigate through different parts of a website.
+Cookies are used for managing sessions and maintaining user state across multiple pages. A simple use case could be to check if a user is logged in as they navigate through different parts of a website. Or implementing a cookie consent banner, that's hidden once the user accepts the cookies.
 
 1. Set up a Vite + Vue app with `npm create vite@latest` (or use an existing project).
 2. Create a simple login page with a username and password field.
@@ -97,25 +95,4 @@ Cookies are used for managing sessions and maintaining user state across multipl
 
 ### 4. Use VueUse to interact with browser storage (shortcut)
 
-https://vueuse.org/core/useStorage/
-
-
-Cookie, local storage, indexed db, session storage 
-Also include stores like nano store, vuex, redux, etc - they can be synced with local storage, indexed db, etc
-
-## Usecase
-
-
-
-## Introduction guide
-
-Difference between cookie, local storage, indexed db, session storage, etc
-
-How to use them...
-
-Potential cases we could use as tutorial examples:
-Case: Save a user's settings in local storage
-Case: Save a user's shopping cart in session storage
-Case: Save a user's login in a cookie
-
-## Further reading
+Try to check out the [VueUse library](https://vueuse.org/core/useStorage/) and use the `useStorage` composable to interact with browser storage. This will simplify the process of storing and retrieving data from local storage, session storage, and cookies.
