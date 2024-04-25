@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'studio-6';
+  font-weight: normal;
+  font-style: normal;
+  src: url('@/assets/fonts/Studio6-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'berlingske-serif';
+  font-weight: normal;
+  font-style: normal;
+  src: url('@/assets/fonts/BerlingskeSerifText-Light.woff2') format('woff2');
+}
