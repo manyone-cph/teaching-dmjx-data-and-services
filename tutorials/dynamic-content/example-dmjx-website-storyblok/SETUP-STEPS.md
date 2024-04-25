@@ -187,13 +187,24 @@ Storyblok: `/config`
 
 ## 16. Render Page modules
 
+Add `@/components/templates/*` components with html and css
+Add `@/components/modules/*` components with html and css
+
+Render templates in `Page.vue` based on template type
+
+## 17. Further enhancements
+
+- Image service: https://www.storyblok.com/docs/image-service/
+- Link resolver: https://www.storyblok.com/docs/guide/in-depth/rendering-the-link-field
+- Rich text resolver: https://www.storyblok.com/docs/richtext-field
+- JSON prebuild fetch for config with global data.
 
 
 
 
 
 
-## 4. Install UnoCSS
+## 18. Optional: Install UnoCSS
 
 https://unocss.dev/integrations/vite
 `npm install -D unocss`
