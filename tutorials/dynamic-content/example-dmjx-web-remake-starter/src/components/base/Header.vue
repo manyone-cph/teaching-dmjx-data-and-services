@@ -32,21 +32,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4rem;
+  padding: 0.5rem 4rem 1rem;
   border-bottom: 1px solid black;
-  & nav {
-    font-size: 0.8rem;
+  nav {
+    font-size: 0.6rem;
+    text-transform: uppercase;
   }
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
   padding: 1rem 4rem;
+
+  nav {
+    font-size: 1.2rem;
+  }
 }
 
 nav {
