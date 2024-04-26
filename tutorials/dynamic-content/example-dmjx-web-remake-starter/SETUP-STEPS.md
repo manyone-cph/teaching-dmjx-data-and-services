@@ -1,10 +1,15 @@
 # Steps to set up DMJX website project
 
 ## 1. Create a new project
+
+https://vitejs.dev/guide/ - build tool for modern web development
+
 `npm create vite@latest` > vue, javascript
 `cd <project-name>`
 `npm install`
 `npm run dev`
+
+Open in VS code:
 
 Update `vite.config.js` with alias:
 `import path from "path";`
@@ -74,11 +79,27 @@ Add `main.css`:
 :root {
   --font-sans: 'studio-6', sans-serif;
   --font-serif: 'berlingske-serif', serif;
+  --fz-headline-lg: 3rem;
+  --fz-headline-md: 2rem;
+  --fz-headline-sm: 1.5rem;
 }
 
-.app {
+
+html {
   font-family: var(--font-sans);
+  line-height: 1.5;
 }
+
+h1, h2, h3 {
+  display: inline-block;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: var(--font-serif);
+}
+
 ```
 
 Import `main.css` in `main.js`: `import "@/assets/styles/main.css";`
@@ -91,8 +112,12 @@ Make it look like the DMJX header...
 
 ## 7. Add Storyblok
 
+Make `Home.vue` and `About.vue` views
+
 https://www.storyblok.com/tp/add-a-headless-CMS-to-vuejs-in-5-minutes
 https://github.com/storyblok/storyblok-vue
+
+https://vitejs.dev/guide/env-and-mode
 
 Make a new Storyblok space
 - Plan: Community
@@ -106,7 +131,7 @@ c. Add `.env` file with `VITE_STORYBLOK_ACCESS_TOKEN` and put it in gitignore
 https://github.com/storyblok/storyblok-vue?tab=readme-ov-file#long-form
 
 `@/views/Home.vue` - fetch content and show json
-App.vue: Add <Home/> view with suspense around it
+App.vue: Add <Home/> view with <Suspense> around it
 
 
 ## 9. Add Vue Router
@@ -126,9 +151,46 @@ import router from "./router";
 app.use(router);
 ```
 
-`App.vue`: Replace <Home> with <router-view> inside suspense
+```js
+import { createWebHistory, createRouter } from "vue-router";
+
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: () => import("@/views/Home.vue"),
+  },
+  {
+    path: "/:slug",
+    name: "Page",
+    component: () => import("@/views/Page.vue"),
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
+```
+
+`App.vue`: Replace <Home> with <router-view> inside suspense:
+
+```html
+<RouterView v-slot="{ Component, route }">
+  <Suspense>
+    <div>
+      <component :is="Component" :key="route.path" />
+    </div>
+    <template #fallback>Loading...</template>
+  </Suspense>
+</RouterView>
+```
 
 ## 10. One route for all pages
+
+https://router.vuejs.org/guide/advanced/composition-api.html
 
 What if we make all pages render the same view?
 
@@ -146,7 +208,18 @@ Update `router.js`: `{ path: "/:pathMatch(.*)*", component: Page }`
 
 In the CMS create an `about` page.
 
-## 12. Visual editor experience
+## 12. Default page for home page
+
+If `route.path` === `/`, then fetch from `/home` instead.
+
+## 13. Render page templates and modules
+
+Add `@/components/templates/*` components with html and css
+Add `@/components/modules/*` components with html and css
+
+Render templates in `Page.vue` based on template type
+
+## 14. Visual editor experience
 
 https://github.com/storyblok/storyblok-vue?tab=readme-ov-file#2-listen-to-storyblok-visual-editor-events
 
@@ -162,16 +235,9 @@ Add bridge in `Page.vue`:
   });
 ```
 
-## 13. Default page for home page
-
-If `route.path` === `/`, then fetch from `/home`
-
-## 14. Handle 404
-
-`Page.vue` > try catch
-If no data, then show 'Page not found message'
-
 ## 15. Add global data
+
+Copy-paste <Header/> from example project.
 
 Storyblok: `/config`
 - Header (blok)
@@ -184,13 +250,32 @@ Storyblok: `/config`
 
 `@/components/base/Header.vue`: Fetch global data and render navs
 
+## 16. Handle 404
 
-## 16. Render Page modules
+`Page.vue` > try catch
+If no data, then show 'Page not found message'
 
-Add `@/components/templates/*` components with html and css
-Add `@/components/modules/*` components with html and css
+```html
+<div v-if="!state?.story">Page not found</div>
+```
 
-Render templates in `Page.vue` based on template type
+```js
+const state = reactive({ story: null });
+
+try {
+  const { data } = await storyblokApi.get(`cdn/stories${path}`, {
+    version: "draft",
+  });
+  state.story = data.story;
+} catch (error) {
+  console.error(error);
+}
+
+onMounted(() => {
+  if (!state.story) return;
+  useStoryblokBridge(state.story.id, (story) => (state.story = story));
+});
+```
 
 ## 17. Further enhancements
 
@@ -201,7 +286,11 @@ Render templates in `Page.vue` based on template type
 
 
 
+## Ordbog
 
+Ordbog
+- SASS/SCSS - CSS extension language
+- SDK - Software Development Kit
 
 
 ## 18. Optional: Install UnoCSS

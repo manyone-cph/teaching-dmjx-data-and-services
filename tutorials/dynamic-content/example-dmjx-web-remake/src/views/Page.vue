@@ -27,11 +27,10 @@ import ArticleTemplate from "@/components/templates/ArticleTemplate.vue";
 const route = useRoute();
 const storyblokApi = useStoryblokApi();
 
-const state = reactive({ story: null });
 const path = route.path === "/" ? "/home" : route.path;
+const state = reactive({ story: null });
 
 try {
-  // const { data } = await storyblokApi.get(`cdn/stories${route.path}`, {
   const { data } = await storyblokApi.get(`cdn/stories${path}`, {
     version: "draft",
   });

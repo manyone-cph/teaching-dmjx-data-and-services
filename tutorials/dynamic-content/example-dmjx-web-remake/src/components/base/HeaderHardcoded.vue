@@ -1,5 +1,5 @@
 <template>
-  <!-- <header>
+  <header>
     <div class="top-bar">
       <span class="logo">DMJX</span>
       <nav>
@@ -18,26 +18,6 @@
         <a>Om DMJX</a>
       </nav>
     </div>
-  </header> -->
-  <header>
-    <div class="top-bar">
-      <router-link to="/">
-        <span class="logo">DMJX</span>
-      </router-link>
-      <nav>
-        <router-link v-for="item in header.navTertiary" :to="`/${item.link.cached_url}`">{{ item.label }}</router-link>
-      </nav>
-    </div>
-    <div class="nav-bar">
-      <nav>
-        <router-link v-for="item in header.navPrimary" :to="`/${item.link.cached_url}`">{{ item.label }}</router-link>
-      </nav>
-      <nav>
-        <router-link v-for="item in header.navSecondary" :to="`/${item.link.cached_url}`">{{ item.label }}</router-link>
-      </nav>
-    </div>
-    <!-- <pre>{{ state.story }}</pre> -->
-    <!-- <pre>{{ header }}</pre> -->
   </header>
 </template>
 
