@@ -1,0 +1,81 @@
+/* @import './base.css'; */
+
+@font-face {
+  font-family: "linguistics";
+  src: url("./fonts/linguistics-regular.woff2") format("woff2"),
+    url("./fonts/linguistics-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --shake-scale: 0;
+  --bg-color: #200BD1;
+  --color: #fff;
+  --color-cursor: #DCD9E0;
+  /* --color-1: #FFF8D2;
+  --color-2: #FEE6FF;
+  --color-3: #FFEAE5;
+  --color-4: #E5E6FF;
+  --color-5: #E6E0E0;
+  --color-6: #DCD9E0; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+
+  background-color: var(--bg-color);
+  color: var(--color);
+
+  font-family: "linguistics", verdana, helvetica, arial;
+}
+
+span {
+  vertical-align: middle;
+}
+
+button {
+  all: unset;
+
+  color: var(--color);
+  border: 6px solid var(--color);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 max(0.8rem, 1.8vw);
+  margin-right: 2vw;
+  font: inherit;
+  user-select: none;
+  vertical-align: middle;
+  text-align: center;
+
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    color: var(--bg-color);
+    background-color: var(--color);
+  }
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding: 4vw;
+
+  font-size: max(3rem, 7vw);
+  line-height: 122%;
+}
